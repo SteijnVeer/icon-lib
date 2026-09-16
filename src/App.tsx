@@ -80,33 +80,79 @@ function escapeTypeScriptString(value: string) {
 }
 
 function createIconComponent(selectedIcons: SelectedIcon[]) {
-  const uniqueIconNames = [...new Set(selectedIcons.map(icon => icon.name))];
-  const iconNames = uniqueIconNames
-    .map(name => `'${escapeTypeScriptString(name)}'`)
-    .join(' | ');
+  const uniqueIconNamesInQuotes = [...new Set(selectedIcons.map(icon => `'${escapeTypeScriptString(icon.name)}'`))];
 
   return `import type { SVGProps } from 'react';
 
-export const ICONS_BASE_URL = './';
-export const iconNames = [${uniqueIconNames.map(name => `'${escapeTypeScriptString(name)}'`).join(', ')}] as const;
-export type IconName = ${iconNames || 'never'};
+export const ICONS_BASE_URL = '/icons/';
+export const iconNames = [${uniqueIconNamesInQuotes.join(', ')}] as const;
+export type IconName = ${uniqueIconNamesInQuotes.join(' | ') || 'never'};
 export type IconSize = 24 | 30 | '24' | '30';
 
 export type IconProps = Omit<SVGProps<SVGSVGElement>, 'children' | 'viewBox'> & {
   name: IconName;
   solid?: boolean;
   size?: IconSize;
+  color?: string;
 };
 
-export function Icon({ name, solid = false, size = 24, ...props }: IconProps) {
+export function Icon({ name, solid = false, size = 24, color = 'currentColor', ...props }: IconProps) {
   const normalizedSize = Number(size);
   const sizeSuffix = \`\${normalizedSize}px\`;
-  const viewBox = \`0 0 \${normalizedSize} \${normalizedSize}\`;
-  const style = solid ? 'solid' : 'line';
 
   return (
-    <svg viewBox={viewBox} {...props}>
-      <use href={\`\${ICONS_BASE_URL}\${style}-\${sizeSuffix}.svg#\${name}\`} />
+    <svg
+      viewBox={\`0 0 \${normalizedSize} \${normalizedSize}\`}
+      width={sizeSuffix}
+      height={sizeSuffix}
+      fill={color}
+      {...props}
+    >
+      <use
+        href={\`\${ICONS_BASE_URL}\${solid ? 'solid' : 'line'}-\${sizeSuffix}.svg#\${name}\`}
+      />
+    </svg>
+  );
+}
+`;
+}
+
+
+function createExternalIconComponent(allIcons: Record<string, string[]>) {
+  const uniqueIconNamesInQuotes = [...new Set(Object.values(allIcons).flat())].map(name => `'${escapeTypeScriptString(name)}'`);
+
+  return `import type { SVGProps } from 'react';
+
+export const ICONS_BASE_URL = '${window.location.origin}/icons/';
+const categoryEntries = [
+${Object.entries(allIcons).map(([category, icons]) => `  ['${category}', new Set([${icons.map(icon => `'${escapeTypeScriptString(icon)}'`).join(', ')}])],`).join('\n')}
+] as const;
+export const iconNames = [${uniqueIconNamesInQuotes.join(', ')}] as const;
+export type IconName = ${uniqueIconNamesInQuotes.join(' | ') || 'never'};
+export type IconSize = 24 | 30 | '24' | '30';
+
+export type IconProps = Omit<SVGProps<SVGSVGElement>, 'children' | 'viewBox'> & {
+  name: IconName;
+  solid?: boolean;
+  size?: IconSize;
+  color?: string;
+};
+
+export function Icon({ name, solid = false, size = 24, color = 'currentColor', ...props }: IconProps) {
+  const normalizedSize = Number(size);
+  const sizeSuffix = \`\${normalizedSize}px\`;
+
+  return (
+    <svg
+      viewBox={\`0 0 \${normalizedSize} \${normalizedSize}\`}
+      width={sizeSuffix}
+      height={sizeSuffix}
+      fill={color}
+      {...props}
+    >
+      <use
+        href={\`\${ICONS_BASE_URL}\${solid ? 'solid' : 'line'}/\${categoryEntries.find(([category, icons]) => icons.has(name))?.[0]}/\${name}-\${sizeSuffix}.svg\`}
+      />
     </svg>
   );
 }
@@ -224,6 +270,26 @@ export default function App() {
     }
   };
 
+  const handleDownloadExternalComponent = async () => {
+    setExportState('exporting');
+    try {
+      const zip = new JSZip();
+      zip.file('icon.tsx', createExternalIconComponent(Object.fromEntries(Object.entries(iconsIndexRef.current).map(([categoryName, icons]) => [categoryName, icons.map(icon => icon.name)]))));
+
+      const archive = await zip.generateAsync({ type: 'blob' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(archive);
+      link.download = 'icons.zip';
+      link.click();
+      URL.revokeObjectURL(link.href);
+      setExportState('idle');
+      setExportModalOpen(false);
+    } catch (error) {
+      console.error('Failed to export external component:', error);
+      setExportState('error');
+    }
+  };
+
   const handleCloseModal = () => {
     setSelectedIcon(null);
     history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -321,6 +387,13 @@ export default function App() {
               disabled={selectedIcons.length === 0 || exportState === 'exporting'}
             >
               Export
+            </button>
+            <button
+              className="header-export-button"
+              onClick={() => handleDownloadExternalComponent()}
+              disabled={exportState === 'exporting'}
+            >
+              Download External Icon Component
             </button>
           </fieldset>
         </div>
