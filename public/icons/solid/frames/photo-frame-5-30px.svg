@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+<g id="Photo_frame_5">
+	<g>
+		<polygon points="25,4.707 25,25.293 29,29.293 29,0.707 		"/>
+		<polygon points="4,4.707 0,0.707 0,29.293 4,25.293 		"/>
+		<polygon points="0.707,0 4.707,4 24.293,4 28.293,0 		"/>
+		<polygon points="24.293,26 4.707,26 0.707,30 28.293,30 		"/>
+	</g>
+</g>
+</svg>

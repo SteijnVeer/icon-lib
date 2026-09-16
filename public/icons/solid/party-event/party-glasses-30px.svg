@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+<g id="Party_Glasses">
+	<g>
+		<path style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M20.5,9.5h-2
+			c-2.163,0-2.852,2.728-2,5l0,0c1.182,3.152,3,5,6,5h2c2.488,0,4.648-1.685,5-4.5l0,0c0.323-2.582-1.718-5.5-4-5.5H15H4.5
+			c-2.282,0-4.323,2.918-4,5.5l0,0c0.352,2.815,2.512,4.5,5,4.5h2c3,0,4.818-1.848,6-5l0,0c0.852-2.272,0.163-5-2-5h-2"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="1" y1="13.5" x2="13.78" y2="13.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="1.5" y1="11.5" x2="13.5" y2="11.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="1" y1="15.5" x2="13" y2="15.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="1.512" y1="17.5" x2="11.5" y2="17.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="29" y1="13.5" x2="16.22" y2="13.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="28.5" y1="11.5" x2="16.5" y2="11.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="29" y1="15.5" x2="17" y2="15.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="28.488" y1="17.5" x2="18.5" y2="17.5"/>
+	</g>
+</g>
+</svg>

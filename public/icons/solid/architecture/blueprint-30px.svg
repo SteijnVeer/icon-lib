@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+<g id="Blueprint">
+	<g>
+		<g>
+			<g>
+				<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" x1="7.5" y1="15.75" x2="7.5" y2="16.75"/>
+					<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.25,2.25;" x1="7.5" y1="19" x2="7.5" y2="22.375"/>
+				<polyline style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" points="7.5,23.5 7.5,24.5 8.5,24.5 
+									"/>
+					<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.8571,1.8571;" x1="10.357" y1="24.5" x2="20.571" y2="24.5"/>
+				<polyline style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" points="21.5,24.5 22.5,24.5 
+					22.5,23.5 				"/>
+					<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.25,2.25;" x1="22.5" y1="21.25" x2="22.5" y2="17.875"/>
+					<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" x1="22.5" y1="16.75" x2="22.5" y2="15.75"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<polyline style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" points="15.689,5.225 15,4.5 
+					14.311,5.225 				"/>
+					<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.3586,2.3586;" x1="12.687" y1="6.935" x2="7.001" y2="12.92"/>
+				<polyline style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" points="6.189,13.775 5.5,14.5 
+					6.5,14.5 				"/>
+					<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.8889,1.8889;" x1="8.389" y1="14.5" x2="22.556" y2="14.5"/>
+				<polyline style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" points="23.5,14.5 24.5,14.5 
+					23.811,13.775 				"/>
+					<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.3586,2.3586;" x1="22.187" y1="12.065" x2="16.501" y2="6.08"/>
+			</g>
+		</g>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="13.5" y1="2.5" x2="11.5" y2="0.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="16.5" y1="2.5" x2="18.5" y2="0.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="29.5" y1="14.5" x2="26.5" y2="14.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="22.5" y1="29.5" x2="22.5" y2="26.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="7.5" y1="29.5" x2="7.5" y2="26.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="29.5" y1="24.5" x2="26.5" y2="24.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="0.5" y1="24.5" x2="3.5" y2="24.5"/>
+			<line style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="0.5" y1="14.5" x2="3.5" y2="14.5"/>
+	</g>
+</g>
+</svg>

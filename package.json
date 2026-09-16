@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "jszip": "^3.10.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "globals": "^17.12.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "name": "icon-lib",
+  "private": true,
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "clean-svgs": "node scripts/clean-svgs.js",
+    "create-icon-index": "node scripts/create-icon-index.js",
+    "dev": "vite",
+    "preview": "vite preview",
+    "rename-icons": "node scripts/rename-icons.js",
+    "reorganize-icons": "node scripts/reorganize-icons.js"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
